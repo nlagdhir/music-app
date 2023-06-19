@@ -5,11 +5,11 @@ const bodyParser = require("body-parser");
 const path = require("path");
 
 require("dotenv").config();
-// const url = "http://localhost:3001";
-const originUrl = process.env.ORIGIN_URL;
+const url = "http://localhost:3001";
+// const originUrl = process.env.ORIGIN_URL;
 app.use(
   cors({
-    origin: originUrl,
+    origin: url,
     credentials: true,
   })
 );

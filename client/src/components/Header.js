@@ -1,5 +1,6 @@
 import React from "react";
 import hero from "../assets/image/hero.png";
+
 function Header() {
   return (
     <div className="bg-[#0a183d] h-[600px] md:h-[500px] py-4 md:flex justify-between w-full px-4">
@@ -15,6 +16,7 @@ function Header() {
             news, reviews, and updates from the music industry.
           </p>
           <button
+           
             className="bg-red-500 rounded-2xl px-4 py-2 mt-4 text-white font-semibold "
             type=""
           >
