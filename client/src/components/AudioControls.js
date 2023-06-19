@@ -4,8 +4,11 @@ import { AiFillPlayCircle, AiFillPauseCircle } from "react-icons/ai";
 import { BiSkipNext, BiSkipPrevious } from "react-icons/bi";
 import { IconContext } from "react-icons";
 import playPic from "../assets/image/music.png";
+
 export default function AudioControl({ audio }) {
-  const audioSrc = `../../upload/${audio.audio}`;
+  const baseUrl = process.env.REACT_APP_BASE_URL2;
+
+  const audioSrc = `${baseUrl}/${audio.path}`;
   const [isPlaying, setIsPlaying] = useState(false);
   const [time, setTime] = useState({
     min: "",
@@ -30,7 +33,7 @@ export default function AudioControl({ audio }) {
         sec: secRemain,
       });
     }
-  }, [isPlaying]);
+  }, [isPlaying, duration]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -45,7 +48,7 @@ export default function AudioControl({ audio }) {
       }
     }, 1000);
     return () => clearInterval(interval);
-  }, [sound]);
+  }, []);
 
   const playingButton = () => {
     if (isPlaying) {
@@ -65,7 +68,9 @@ export default function AudioControl({ audio }) {
       </div>
       <div>
         <h3 className="text-center py-1 text-gray-300">{audio.artist}</h3>
-        <p className="text-center py-1 text-gray-300 ">{audio.title}</p>
+        <p className="text-center text-white animation bg-slate-500 mx-1 rounded-md">
+          {audio.title.slice(0, 30)}
+        </p>
       </div>
       <div>
         <div className="time">

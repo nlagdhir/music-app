@@ -9,11 +9,19 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const location = useLocation();
+  const navigate = useNavigate();
   const [errors, setErrors] = useState(false);
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
-  const location = useLocation();
-  const navigate = useNavigate();
+
+  if (loading) {
+    return <Loading />;
+  }
+  console.log(user);
+  console.log(email);
+  console.log(password);
+
   let from = location.state?.from?.pathname || "/";
 
   if (user) {
@@ -49,7 +57,6 @@ export default function SignUp() {
         <h1 className="text-3xl font-semibold text-center  uppercase">
           Sign Up
         </h1>
-        {user && <p>{user}</p>}
         <div className="mt-6">
           <div className="mb-2">
             <label

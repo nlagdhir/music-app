@@ -4,12 +4,14 @@ import { Link } from "react-router-dom";
 
 function UserMusic() {
   const [music, setMusic] = useState([]);
-  const url = 'https://solo-musics.vercel.app';
+  const baseUrl = process.env.REACT_APP_BASE_URL2;
+
+  // const url = "http://localhost:5000";
   useEffect(() => {
-    fetch(url)
+    fetch(`${baseUrl}/music`)
       .then((res) => res.json())
       .then((data) => setMusic(data));
-  }, [url]);
+  }, []);
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-24 lg:max-w-7xl lg:px-8">
