@@ -76,7 +76,7 @@ function Footer() {
               className="text-gray-400 ml-1"
               target="_blank"
             >
-              @trk
+              @nilesh
             </a>
           </p>
           <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">

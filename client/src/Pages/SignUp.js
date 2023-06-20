@@ -18,9 +18,7 @@ export default function SignUp() {
   if (loading) {
     return <Loading />;
   }
-  console.log(user);
-  console.log(email);
-  console.log(password);
+  
 
   let from = location.state?.from?.pathname || "/";
 

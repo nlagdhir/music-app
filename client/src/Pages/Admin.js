@@ -64,7 +64,6 @@ export default function Admin() {
         }
       });
   };
-  console.log(music);
   return (
     <div className="bg-white">
       <div className="grid grid-cols-1 md:grid-cols-3 place-items-center justify-items-center gap-3 mx-4 py-8">

@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const path = require("path");
 
 require("dotenv").config();
-const url = "http://localhost:3001";
+const url = "http://localhost:3000";
 // const originUrl = process.env.ORIGIN_URL;
 app.use(
   cors({
